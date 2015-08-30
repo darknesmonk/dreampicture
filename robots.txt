@@ -1,0 +1,4 @@
+User-Agent: *
+Host: dreampicture.ru
+Sitemap: http://dreampicture.ru/sitemap.xml
+Disallow: 

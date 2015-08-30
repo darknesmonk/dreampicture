@@ -1,0 +1,37 @@
+<?
+if (!defined('IN_DP')) forbid(); 
+error_reporting(0);
+setlocale(LC_ALL, 'ru_RU.CP1251');
+session_save_path("tmp");
+session_start();
+ini_set("upload_max_filesize","300M");
+ini_set("post_max_size","300M");
+//set_time_limit (0);
+  $host=$_SERVER['HTTP_HOST'];
+ $clife=time()+8184000;
+ $rnd=rand(1,200);
+ $fotodir="fotos/";
+ $imgname=imgname();
+ $inf=date("dysmiH").rand(100,999);
+ $code=date("is");
+ $date=date("Y-m-d");
+ $month=date("m");
+ $year=date("Y");
+ $time=date("H:i:s");
+ $ip=$_SERVER['REMOTE_ADDR'];
+ $urlfix=str_replace("&","&amp;","".chrep($_SERVER['REQUEST_URI']));
+ $url=trim("".chrep($_SERVER['REQUEST_URI']));
+ $ref=trim("".chrep($_SERVER['HTTP_REFERER']));
+ $self_in=array("/","index.php");
+ $self_to=array("","/");
+ $PHP_SELF=str_replace($self_in,$self_to,strtolower($_SERVER['PHP_SELF']));
+ $months = array(false,'€нварь','февраль','март','апрель','май','июнь','июль','август.','сент€брь','окт€брь','но€брь','декабрь');
+ $HTTPSERVER="http://".$_SERVER['SERVER_NAME'];
+ $useragent=chrep($_SERVER['HTTP_USER_AGENT']);
+ $start_time = microtime();
+ $start_array = explode(" ",$start_time);
+ $start_time = $start_array[1] + $start_array[0];
+ $protocol=$_SERVER['SERVER_PROTOCOL'];
+  $canonical=$next_page="http://".$host."/";
+ $DP_admin=false;
+?>

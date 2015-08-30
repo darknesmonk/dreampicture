@@ -1,0 +1,27 @@
+AddDefaultCharset WINDOWS-1251
+Options -Indexes
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^www.dreampicture\.ru 
+RewriteRule ^(.*)$ http://dreampicture.ru/$1 [R=permanent,L]
+ErrorDocument 404 /img.php?type=4
+ErrorDocument 403 /img.php?type=5
+RewriteRule ^best/page/(.*)/ /?act=others&type=best&page=$1 [NC,NE,PT,L,QSA]
+RewriteRule ^hd/page/(.*)/  /?act=others&type=hd&page=$1 [NC,NE,PT,L,QSA]
+RewriteRule ^new/page/(.*)/  /?act=others&type=new&page=$1 [NC,NE,PT,L,QSA]
+RewriteRule ^best/ /?act=others&type=best [NC,NE,PT,L,QSA]
+RewriteRule ^hd/ /?act=others&type=hd [NC,NE,PT,L,QSA]
+RewriteRule ^new/ /?act=others&type=new [NC,NE,PT,L,QSA]
+RewriteRule ^category/(.*)/sub/(.*)/page/(.*)/$ /index.php?act=cat&catid=$1&subcatid=$2&page=$3 [NC,NE,PT,L,QSA]
+RewriteRule ^category/(.*)/page/(.*)/$ /index.php?act=cat&catid=$1&page=$2 [NC,NE,PT,L,QSA]
+RewriteRule ^category/(.*)/sub/(.*)/$ /index.php?act=cat&catid=$1&subcatid=$2 [NC,NE,PT,L,QSA]
+RewriteRule ^category/(.*)/$ /index.php?act=cat&catid=$1 [NC,NE,PT,L,QSA]
+RewriteRule ^category/ /index.php?act=cat [NC,NE,PT,L,QSA]
+RewriteRule ^search/?(.*)$ /index.php?act=search&$1 [NC,NE,PT,L,QSA]
+RewriteRule ^thumb(.*).jpg$ /img.php?fid=$1&type=2 [NC,NE,PT,L,QSA]
+RewriteRule ^pages/(.*)/(.+)/$ /page.php?fid=$1&order=$3 [NC,NE,PT,L,QSA]
+RewriteRule ^pages/(.*)/$ /page.php?fid=$1 [NC,NE,PT,L,QSA]
+RewriteRule ^public/full/(.*).jpg$ /img.php?fid=$1&type=1 [NC,NE,PT,L,QSA]
+RewriteRule ^public/thumb/(.*).jpg$ /img.php?fid=$1&type=2 [NC,NE,PT,L,QSA]
+RewriteRule ^public/gray/(.*).jpg$ /img.php?fid=$1&type=3 [NC,NE,PT,L,QSA]
+RewriteRule ^files/img/(.*)$ /compatibility.php?src=$1 [NC,NE,PT,L,QSA]
+RewriteRule ^files/thumb/(.*)$ /compatibility.php?src=$1 [NC,NE,PT,L,QSA]
