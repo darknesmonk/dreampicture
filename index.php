@@ -1,4 +1,4 @@
 <?
-print "WTF";
-print "hello world";
+include("/inc/func.php");
+print $ip;
 ?>
