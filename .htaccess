@@ -1,8 +1,6 @@
 AddDefaultCharset WINDOWS-1251
 Options -Indexes
 RewriteEngine on
-RewriteCond %{HTTP_HOST} ^www.dreampicture\.ru 
-RewriteRule ^(.*)$ http://dreampicture.ru/$1 [R=permanent,L]
 ErrorDocument 404 /img.php?type=4
 ErrorDocument 403 /img.php?type=5
 RewriteRule ^best/page/(.*)/ /?act=others&type=best&page=$1 [NC,NE,PT,L,QSA]

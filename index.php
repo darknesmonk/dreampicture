@@ -1,5 +1,6 @@
 <?
 define('IN_DP', true);
+
 include("inc/func.php");
 $act=$_GET['act'];
 
@@ -119,8 +120,7 @@ default: pagenotfound();
 
 $db->query();
 $fotos=$db->fetch_a();
-if($db->affected()==0) pagenotfound();
-$db->free();
+//if($db->affected()==0) pagenotfound();
 $db->free();
 $pages=ceil($c/maxonepage)+1;
 ob_start();
@@ -131,11 +131,10 @@ break;
 default: 
 $title="Главная";
 $db->q="SELECT * FROM  fotos  FORCE INDEX(subcategory)  
-WHERE fotos.fid >1000
 ORDER BY RAND() LIMIT 48";
 $db->query();
 $res=$db->fetch_a();
-if($db->affected()==0)  pagenotfound();
+//if($db->affected()==0)  pagenotfound();
 $db->free();
 $key=1;
 $trkey=12;
